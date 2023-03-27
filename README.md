@@ -1,6 +1,9 @@
 # Git Notes
 
-##Syntax
+## Workflow
+Edit -> Add -> Commit -> Push
+
+## Syntax
 ### .
 **.** represents all/everything
 
