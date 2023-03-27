@@ -69,3 +69,9 @@ git push -u origin branch-(BranchName)
 ```
 git push
 ```
+
+## code
+You may use the following command to access your project file on the selected branch in visual studio using the following command
+```
+code .
+```
