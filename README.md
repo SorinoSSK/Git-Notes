@@ -30,6 +30,10 @@ You can modify the message of your last commit
 ```
 git commit --amend
 ```
+To save and quit the edit interface use the following command
+```
+:wq
+```
 
 ## branch
 ### creating branch
@@ -53,10 +57,6 @@ Red coded lines represents files that have not been added for push.
 Green coded lines represents files that have been added for push.
 ```
 git status
-```
-To save and quit the edit interface use the following command
-```
-:wq
 ```
 
 ## push
