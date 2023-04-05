@@ -75,3 +75,7 @@ You may use the following command to access your project file on the selected br
 ```
 code .
 ```
+## Link git repository to a folder.
+```
+git clone (copy command from repository).
+```
