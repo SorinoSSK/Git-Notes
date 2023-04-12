@@ -70,6 +70,21 @@ git push -u origin branch-(BranchName)
 git push
 ```
 
+## pull
+### Pull from other branch and overwrite current branch.
+Overwrite all files of current branch with the intended branch.
+```
+git pull origin (BranchName)
+```
+
+## delete
+### delete a branch
+User must not be in the branch it is deleting. If changes have been made, you have to commit before changing branch and deleting it.
+```
+git branch --delete (BranchName)
+git branch -D (BranchName)
+```
+
 ## code
 You may use the following command to access your project file on the selected branch in visual studio.
 ```
