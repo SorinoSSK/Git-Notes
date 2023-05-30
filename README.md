@@ -85,6 +85,12 @@ git branch --delete (BranchName)
 git branch -D (BranchName)
 ```
 
+## update local file
+```
+git fetch --all
+git reset --hard origin/master
+```
+
 ## code
 You may use the following command to access your project file on the selected branch in visual studio.
 ```
