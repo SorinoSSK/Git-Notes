@@ -1,7 +1,8 @@
-# Git Notes
+# Sin Kiat's Git Notes
+This note contains a summarised list of commands for git.
 
-## Workflow
-Edit -> Add -> Commit -> Push
+## Git Workflow
+<font size="5">Edit &rarr; Add &rarr; Commit &rarr; Push</font>
 
 ## Syntax
 ### 1) .
@@ -25,7 +26,7 @@ You may or may not fill in (Your message). (Your message) will serve as a descri
 ```
 git commit -m "(Your message)"
 ```
-#### 4.1) modifying commit message
+#### 4.1) Modify last commit message
 You can modify the message of your last commit
 ```
 git commit --amend
@@ -36,32 +37,45 @@ To save and quit the edit interface use the following command
 ```
 
 ### 5) branch
-#### 5.1) view all local branch
+#### 5.1) View all local branch
 You can view all branches created in your local repository using the following command.  
 ```
 git branch
 ```
-#### 5.2) view all available branch
+#### 5.2) View all available branch
 If a branch to to appear when using the above command, then the branch is not pulled to your local repository. Therefore, to view branches of both local and remote repository, you will use the following command.
+```
+git branch -a
+```
+#### 5.3) View all remote branch
 ```
 git branch -r
 ```
-#### 5.3) creating branch
-Branch can be created on github webpage or on the command prompt. (BranchName) can be any unique name. Always ensure to check that your are on master before creating branch using ```git branch```.
+
+#### 5.4) Creating branch
+Branch can be created on github webpage or on the command prompt. (BranchName) can be any unique name. Always ensure to check that your are on master before creating branch using ```git branch```. You may or may not use the convention ```branch-```.
 ```
 git checkout -b branch-(BranchName)
 ```
-#### 5.4) changing branch
-You can change your working branch to another branch.
+Alternatively
+```
+git switch -c branch-(BranchName)
+```
+#### 5.5) Changing branch
+You can change your working branch to another branch using ```checkout```.
 ```
 git checkout branch-(BranchName)
 ```
-Master is considered a branch.
+***master*** is considered a branch.
 ```
 git checkout master
 ```
+There is an alternative method to switch branch without the need to commit your local repository.
+```
+git switch branch-(BranchName)
+```
 
-### 6) status
+### 6) Status of a git repository
 Status allows you to track changes made in your file.  
 Red coded lines represents files that have not been added for push.  
 Green coded lines represents files that have been added for push.
@@ -87,26 +101,71 @@ Overwrite all files of current branch with the intended branch.
 git pull origin (BranchName)
 ```
 
-### 9) delete
-#### 9.1) delete a branch
-User must not be in the branch it is deleting. If changes have been made, you have to commit before changing branch and deleting it.
+### 9) Delete a branch
+To use this command, the user must not be in the branch it is deleting.  
+If changes have been made, you have to commit before changing branch and deleting it.
 ```
 git branch --delete (BranchName)
+```
+Alternatively
+```
 git branch -D (BranchName)
 ```
 
-### 9.2) reset and update local file
+### 10) Reset and update local file
 ```
 git fetch --all
 git reset --hard origin/master
 ```
 
-### 9.3) code
+### 11) Open Visual Studio Code using the terminal
 You may use the following command to access your project file on the selected branch in visual studio.
 ```
 code .
 ```
-### 9.4) clone a remote git repository to a folder.
+### 12) Clone a remote git repository to a folder.
 ```
 git clone (copy command from repository).
 ```
+For example:
+```
+git clone git@github.com:SorinoSSK/Git-Notes.git
+```
+![Alt text](images/git-clone.png)
+
+## Generating SSH Key
+You can use SSH connection instead of HTTPS for safer communication between git and your device. 
+
+To use generate SSH:  
+**A. Linux Steps:**  
+&emsp;&emsp; 1) Type in the following in your console
+```
+ssh-keygen
+```
+&emsp;&emsp; 2) Press **enter** to store the SSH files in default directory.  
+&emsp;&emsp; 3) Overwrite any existing SSH key if you have.  
+&emsp;&emsp; 4) Leave passphase **empty** (Unless you needed it).  
+&emsp;&emsp; 5) 2 SSH key files will be generated. 
+
+Notes:  
+1) default SSH key directory: /home/[username]/.ssh/id_rsa
+
+**B. Windows Steps:**  
+&emsp;&emsp; 1) Verify if OpenSSH is installed
+&emsp;&emsp; 2) Type in the following in your console
+```
+ssh-keygen
+```
+&emsp;&emsp; 3) Press **enter** to store the SSH files in default directory.  
+&emsp;&emsp; 4) Overwrite any existing SSH key if you have.  
+&emsp;&emsp; 5) Leave passphase **empty** (Unless you needed it).  
+&emsp;&emsp; 6) 2 SSH key files will be generated. 
+
+Notes:  
+1) default SSH key directory: C:\Users\\[username]/.ssh/
+
+Generate file types
+|File Name       | What?             |
+|----------------|-------------------| 
+|id_rsa          | private key       |
+|id_rsa.pub      | public key        |
